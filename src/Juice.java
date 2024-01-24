@@ -1,8 +1,9 @@
 public class Juice extends Drinks{
-    static int price=15;
-    int weight=50;
-    String stuff="Juice";
-    public Juice(int price, int weight, String stuff) {
-        super(price, weight, stuff);
+    final int price=15;
+    final String stuff="Juice";
+    public Juice() {
+    }
+    public void hello(){
+        System.out.println("hi Juce");
     }
 }

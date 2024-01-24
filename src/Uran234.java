@@ -1,5 +1,6 @@
 public class Uran234 extends Foods{
-    public Uran234(int price, int weight, String stuff) {
-        super(price, weight, stuff);
+    final int price=150;
+    final String stuff="Uran 234";
+    public Uran234() {
     }
 }

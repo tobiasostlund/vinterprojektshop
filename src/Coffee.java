@@ -1,5 +1,6 @@
 public class Coffee extends Drinks{
-    public Coffee(int price, int weight, String stuff) {
-        super(price, weight, stuff);
+    final int price = 10;
+    final String stuff="Kaffe";
+    public Coffee() {
     }
 }

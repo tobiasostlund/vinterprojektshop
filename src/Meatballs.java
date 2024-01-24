@@ -1,5 +1,6 @@
 public class Meatballs extends Foods{
-    public Meatballs(int price, int weight, String stuff) {
-        super(price, weight, stuff);
+    final int price=35;
+    final String stuff="Köttbullar";
+    public Meatballs() {
     }
 }

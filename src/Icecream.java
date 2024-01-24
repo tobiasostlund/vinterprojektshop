@@ -1,5 +1,6 @@
 public class Icecream extends Foods{
-    public Icecream(int price, int weight, String stuff) {
-        super(price, weight, stuff);
+    final int price=20;
+    final String stuff="Glass";
+    public Icecream() {
     }
 }
