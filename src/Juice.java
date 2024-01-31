@@ -1,9 +1,5 @@
-public class Juice extends Drinks{
-    final int price=15;
-    final String stuff="Juice";
+public class Juice extends Products{
     public Juice() {
-    }
-    public void hello(){
-        System.out.println("hi Juce");
+        super(15,"Juice");
     }
 }

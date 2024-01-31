@@ -1,6 +1,5 @@
-public class Soda extends Drinks{
-    final int price=20;
-    final String stuff="Läsk";
+public class Soda extends Products {
     public Soda() {
+        super(20,"Läsk");
     }
 }
