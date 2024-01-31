@@ -16,7 +16,7 @@ public class Shoppingcart {
 
     //methods
 
-    //tar bort vara från varukorgen
+    //tar bort vara från varukorgen,
     public void remove_from_cart(String x){
         for(int i=0; i<allProd.size(); i++){
             if(allProd.get(i).stuff.equals(x)){
@@ -32,6 +32,7 @@ public class Shoppingcart {
         System.out.println("Du har 200 kr att handla för.");
         //huvuddelen av programmet som körs på repeat
         while(true){
+            System.out.println();
             System.out.println("Vad vill du göra?");
             System.out.println("1. Betala");
             System.out.println("2. Lägg till vara i varukorgen");
@@ -41,7 +42,21 @@ public class Shoppingcart {
             //kör det valet som man skriver in från menyn
             switch(val){
                 case 1:
-                    //price=0;
+
+                    int price=0;
+                    //hittar "price" värdet på alla varor i varukorgen och adderar dem för att få summan
+                    for(int i=0; i<allProd.size(); i++){
+                        price=price+(allProd.get(i).price);
+                    }
+                    System.out.println("Pris: "+price+" kr");
+                    //minskar användarens pengar och tömmer varukorgen om användaren har råd att att betala
+                    if(price<=money){
+                        money=money-price;
+                        allProd.clear();
+                        System.out.println("Köp lyckat, du har "+money+" kr kvar.");
+                    }else{
+                        System.out.println("Du har inte råd...");
+                    }
                     break;
 
                 case 2:
@@ -53,12 +68,13 @@ public class Shoppingcart {
                             "5. Glass " +
                             "6. Uran 234");
                     int bought_item=scan.nextInt();
+                    //lägger till varor i varukorgen
                     switch(bought_item){
                         case 1:
                             allProd.add(new Juice());
                             break;
                         case 2:
-                            allProd.add(new Products(20,"Läsk"));
+                            allProd.add(new Soda());
                             break;
                         case 3:
                             allProd.add(new Coffee());
@@ -100,15 +116,22 @@ public class Shoppingcart {
                             remove_from_cart("Icecream");
                             break;
                         case 6:
-                            remove_from_cart("Uran234");
+                            remove_from_cart("Uran 234");
                             break;
                     }
                     break;
                 case 4:
+                    //räknar ut priset
+                    price=0;
+                    for(int i=0; i<allProd.size(); i++){
+                        price=price+(allProd.get(i).price);
+                    }
+                    //skriver ut alla produkter i varukorgen
                     System.out.println("Din varukorg:");
                     for(int i=0; i<allProd.size(); i++){
                         System.out.println(allProd.get(i).stuff);
                     }
+                    System.out.println("Pris: "+price+" kr");
 
                     break;
             }
